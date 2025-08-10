@@ -1,0 +1,39 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# 🌐 Django
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.pot
+*.pyc
+
+# 🔐 Environment & Secrets
+.env
+.env.*
+config.py
+*.pem
+*.key
+
+# 🧠 IDEs & Editors
+.vscode/
+.idea/
+*.swp
+
+# 🖥️ OS-specific files
+.DS_Store
+Thumbs.db
+
+# 🚧 Django Migrations (optional)
+**/migrations/
+!**/migrations/__init__.py
