@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - To-Do App{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{% url 'add' %}">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Add a new task" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <span class="{% if task.complete %}completed{% endif %}">
+                    {{ task.title }}
+                </span>
+                <a href="{% url 'toggle' task.id %}">Toggle</a>
+                <a href="{% url 'delete' task.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <li>No tasks yet!</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
